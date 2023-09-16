@@ -6,6 +6,7 @@ from colorama import Fore
 from pystyle import Center, Colors, Colorate
 import whois
 import subprocess
+from bs4 import BeautifulSoup
 
 
 
@@ -48,14 +49,14 @@ def main_menu():
                         ║ Programmed By Regarus & Frankovsky  ║
                         ╚═════════════════════════════════════╝
                            〝 Please do not use for illegal 〞                  
-                   ╔═════════════════════════════════════════════╗
-                   ║                   -Menu-                    ║ 
-                   ║ Whois               ╗ ╔            XXXXXXX  ║
-                   ║ Instagram           ║ ║            XXXXXXX  ║                         
-                   ║ Twitter             ║ ║            XXXXXXX  ║
-                   ║ Twitch              ║ ║            XXXXXXX  ║
-                   ║ Social              ╝ ╚            XXXXXXX  ║ 
-                   ╚═════════════════════════════════════════════╝
+                    ╔═════════════════════════════════════════════╗
+                    ║                   -Menu-                    ║ 
+                    ║ Whois               ╗ ╔            XXXXXXX  ║
+                    ║ Instagram           ║ ║            XXXXXXX  ║                         
+                    ║ Twitter             ║ ║            XXXXXXX  ║
+                    ║ Twitch              ║ ║            XXXXXXX  ║
+                    ║ Social              ╝ ╚            XXXXXXX  ║ 
+                    ╚═════════════════════════════════════════════╝
     """
     colored_menu = Colorate.Vertical(Colors.red_to_yellow, Center.XCenter(menu_text))
     print(colored_menu)
@@ -69,6 +70,8 @@ show_intro()
 whois_results = ""
 
 
+
+#WHOIS BOT
 def whois_bot():
     global whois_results  # whois_results değişkenini global olarak kullanmak için
 
@@ -103,15 +106,11 @@ def whois_bot():
 
 
 
-
-
-
-
 #aksiyon bitiş
 
 while True:
     main_menu()
-    yellow_input = f"{yellow_color}>>>>>>{reset}"  # Sarı renkli giriş istemi
+    yellow_input = f"{yellow_color}╔══(root@LowkeyPanel)\n╚>>>> {reset}"  # Sarı renkli giriş istemi
     choice = input(yellow_input)
 
     if choice == 'whois':
