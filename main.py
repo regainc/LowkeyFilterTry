@@ -5,6 +5,10 @@ import requests
 from colorama import Fore
 from pystyle import Center, Colors, Colorate
 import whois
+import subprocess
+
+# 'python-whois' paketini otomatik olarak yükle
+subprocess.call(["sudo", "apt-get", "install", "python-whois"])
 
 bright_purple = '\033[95;1m'
 reset = '\033[0m'
@@ -18,17 +22,17 @@ bold = '\033[1m'
 def show_intro():
     print(Colorate.Vertical(Colors.red_to_yellow, Center.XCenter("""
 
-                 ██▓        ▒█████      █     █░    ██ ▄█▀   ▓█████    ▓██   ██▓   
-                ▓██▒       ▒██▒  ██▒   ▓█░ █ ░█░    ██▄█▒    ▓█   ▀     ▒██  ██▒   
-                ▒██░       ▒██░  ██▒   ▒█░ █ ░█    ▓███▄░    ▒███        ▒██ ██░   
-                ▒██░       ▒██   ██░   ░█░ █ ░█    ▓██ █▄    ▒▓█  ▄      ░ ▐██▓░   
-                ░██████▒   ░ ████▓▒░   ░░██▒██▓    ▒██▒ █▄   ░▒████▒     ░ ██▒▓░   
-                ░ ▒░▓  ░   ░ ▒░▒░▒░    ░ ▓░▒ ▒     ▒ ▒▒ ▓▒   ░░ ▒░ ░      ██▒▒▒    
-                ░ ░ ▒  ░     ░ ▒ ▒░      ▒ ░ ░     ░ ░▒ ▒░    ░ ░  ░    ▓██ ░▒░    
-                  ░ ░      ░ ░ ░ ▒       ░   ░     ░ ░░ ░       ░       ▒ ▒ ░░     
-                    ░  ░       ░ ░         ░       ░  ░         ░  ░    ░ ░        
-                                                                  ░ ░    
-                                    LowkeyPanel is Loading...       
+             ██▓        ▒█████      █     █░    ██ ▄█▀   ▓█████    ▓██   ██▓   
+            ▓██▒       ▒██▒  ██▒   ▓█░ █ ░█░    ██▄█▒    ▓█   ▀     ▒██  ██▒   
+            ▒██░       ▒██░  ██▒   ▒█░ █ ░█    ▓███▄░    ▒███        ▒██ ██░   
+            ▒██░       ▒██   ██░   ░█░ █ ░█    ▓██ █▄    ▒▓█  ▄      ░ ▐██▓░   
+            ░██████▒   ░ ████▓▒░   ░░██▒██▓    ▒██▒ █▄   ░▒████▒     ░ ██▒▓░   
+            ░ ▒░▓  ░   ░ ▒░▒░▒░    ░ ▓░▒ ▒     ▒ ▒▒ ▓▒   ░░ ▒░ ░      ██▒▒▒    
+            ░ ░ ▒  ░     ░ ▒ ▒░      ▒ ░ ░     ░ ░▒ ▒░    ░ ░  ░    ▓██ ░▒░    
+              ░ ░      ░ ░ ░ ▒       ░   ░     ░ ░░ ░       ░       ▒ ▒ ░░     
+                ░  ░       ░ ░         ░       ░  ░         ░  ░    ░ ░        
+                                                              ░ ░    
+                                LowkeyPanel is Loading...       
 
     """)))
     time.sleep(2)  # Sistem yüklendi simülasyonu için 2 saniye bekletin
@@ -39,21 +43,21 @@ def show_intro():
 def main_menu():
     menu = f"""
     {bright_purple}
-                          ╔═════════════════╗
-                          ║ LowkeyFilterApp ║
-                          ╚═════════════════╝
-                ╔═════════════════════════════════════╗
-                ║ Programmed By Regarus & Frankovsky  ║
-                ╚═════════════════════════════════════╝
-                   〝 Please do not use for illegal 〞                  
-           ╔═════════════════════════════════════════════╗
-           ║                   -Menu-                    ║ 
-           ║ Whois               ╗ ╔            XXXXXXX  ║
-           ║ Instagram           ║ ║            XXXXXXX  ║                         
-           ║ Twitter             ║ ║            XXXXXXX  ║
-           ║ Twitch              ║ ║            XXXXXXX  ║
-           ║ Social              ╝ ╚            XXXXXXX  ║ 
-           ╚═════════════════════════════════════════════╝
+                              ╔═════════════════╗
+                              ║ LowkeyFilterApp ║
+                              ╚═════════════════╝
+                    ╔═════════════════════════════════════╗
+                    ║ Programmed By Regarus & Frankovsky  ║
+                    ╚═════════════════════════════════════╝
+                       〝 Please do not use for illegal 〞                  
+               ╔═════════════════════════════════════════════╗
+               ║                   -Menu-                    ║ 
+               ║ Whois               ╗ ╔            XXXXXXX  ║
+               ║ Instagram           ║ ║            XXXXXXX  ║                         
+               ║ Twitter             ║ ║            XXXXXXX  ║
+               ║ Twitch              ║ ║            XXXXXXX  ║
+               ║ Social              ╝ ╚            XXXXXXX  ║ 
+               ╚═════════════════════════════════════════════╝
     {reset}"""
     print(menu)
 
@@ -64,7 +68,9 @@ show_intro()
 while True:
     main_menu()
 
-    choice = input("╚═══>")
+    choice = input("⋙⋙")
+
+
 
 
     def whois_bot():
