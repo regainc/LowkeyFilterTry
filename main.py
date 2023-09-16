@@ -6,7 +6,6 @@ from colorama import Fore
 from pystyle import Center, Colors, Colorate
 import whois
 import subprocess
-from bs4 import BeautifulSoup
 
 
 
