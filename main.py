@@ -242,6 +242,9 @@ while True:
         for soru, cevap in cevaplar:
             print(Colorate.Vertical(Colors.yellow_to_red, f"{soru}: {cevap}"))
 
+
+        print(Colorate.Vertical(Colors.yellow_to_red, "Total deleted emails: 9530.."))
+
         # Kullanıcıyı bekletin
         input(Colorate.Vertical(Colors.yellow_to_red, "Press the button to continue..."))
 
