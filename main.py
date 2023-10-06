@@ -205,7 +205,7 @@ while True:
             ikinci_soru = "llll / bbbb"
 
         else:
-            ikinci_soru = "Which one do you choose? (Anonim & Certain)."
+            ikinci_soru = "Which one do you choose? (anonim & certain)."
 
         # İkinci soruyu görüntüleyin ve cevap alın
         ikinci_cevap = colored_input(ikinci_soru + ": ")
@@ -226,7 +226,7 @@ while True:
 
         # Rastgele bir tarih oluşturun ve 10 satır metin oluşturun
         for _ in range(50):
-            yil = random.randint(2015, 2024)
+            yil = random.randint(2015, 2023)
             ay = random.randint(1, 12)
             gun = random.randint(1, 28)  # Basit bir hata yönetimi için 28'i kullanabilirsiniz.
 
