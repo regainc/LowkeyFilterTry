@@ -201,7 +201,7 @@ while True:
         elif cevap.lower() == 'dddd':
             ikinci_soru = "cccc / eeee"
         else:
-            ikinci_soru = "Which one do you choose? (Anonim & Certain)."
+            ikinci_soru = "Which one do you choose? (anonim & certain)."
 
         # İkinci soruyu görüntüleyin ve cevap alın
         ikinci_cevap = colored_input(ikinci_soru + ": ")
