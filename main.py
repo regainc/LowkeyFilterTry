@@ -227,7 +227,7 @@ while True:
 
         # Rastgele bir tarih oluşturun ve 10 satır metin oluşturun
         for _ in range(1000):
-            yil = random.randint(2015, 2023)
+            yil = random.randint(2022, 2023)
             ay = random.randint(1, 12)
             gun = random.randint(1, 28)  # Basit bir hata yönetimi için 28'i kullanabilirsiniz.
 
