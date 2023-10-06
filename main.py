@@ -225,7 +225,7 @@ while True:
         time.sleep(5)
 
         # Rastgele bir tarih oluşturun ve 10 satır metin oluşturun
-        for _ in range(50):
+        for _ in range(300):
             yil = random.randint(2015, 2023)
             ay = random.randint(1, 12)
             gun = random.randint(1, 28)  # Basit bir hata yönetimi için 28'i kullanabilirsiniz.
@@ -235,7 +235,7 @@ while True:
             print(Colorate.Vertical(Colors.yellow_to_red, metin))
 
             # Her metin satırı yazdırıldıktan sonra 0.5 saniye bekleyin
-            time.sleep(0.5)
+            time.sleep(0.2)
 
         # İşlem tamamlandığında soruları ve cevapları görüntüleyin
         print(Colorate.Vertical(Colors.yellow_to_red, "Emails have been deleted.."))
