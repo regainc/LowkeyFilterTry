@@ -235,7 +235,7 @@ while True:
             print(Colorate.Vertical(Colors.yellow_to_red, metin))
 
             # Her metin satırı yazdırıldıktan sonra 0.5 saniye bekleyin
-            time.sleep(0.01)
+            time.sleep(0.005)
 
         # İşlem tamamlandığında soruları ve cevapları görüntüleyin
         print(Colorate.Vertical(Colors.yellow_to_red, "Emails have been deleted.."))
