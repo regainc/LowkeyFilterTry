@@ -186,56 +186,59 @@ while True:
         return input(Colorate.Vertical(Colors.yellow_to_red, Center.XCenter(prompt)))
 
 
-    if choice == 'maildeleted':
-        print(Colorate.Vertical(Colors.yellow_to_red, "Mail-Deleted Loading..."))
+   def colored_input(prompt):
+    return input(Colorate.Vertical(Colors.yellow_to_red, prompt))
 
-        cevaplar = []  # Sorular ve cevaplar için bir liste oluşturun
+if choice == 'maildeleted':
+    print(Colorate.Vertical(Colors.yellow_to_red, "Mail-Deleted Loading..."))
 
-        # Kullanıcıya "plspslsp plsplss" gibi bir soru sorun
-        cevap = colored_input("Which e-mail address do you want to process?: ")
-        cevaplar.append(("plspslsp plsplss", cevap))  # Soru ve cevapları listeye ekleyin
+    cevaplar = []  # Sorular ve cevaplar için bir liste oluşturun
 
-        # İlk soruya verilen cevaba göre ikinci soruyu seçin
-        if cevap.lower() == 'gggg':
-            ikinci_soru = "gggg / dddd"
-        elif cevap.lower() == 'dddd':
-            ikinci_soru = "cccc / eeee"
-        else:
-            ikinci_soru = "Which one do you choose? (anonim & certain)."
+    # Kullanıcıya "plspslsp plsplss" gibi bir soru sorun
+    cevap = colored_input("Which e-mail address do you want to process?: ")
+    cevaplar.append(("plspslsp plsplss", cevap))  # Soru ve cevapları listeye ekleyin
 
-        # İkinci soruyu görüntüleyin ve cevap alın
-        ikinci_cevap = colored_input(ikinci_soru + ": ")
-        cevaplar.append((ikinci_soru, ikinci_cevap))  # Soru ve cevapları listeye ekleyin
+    # İlk soruya verilen cevaba göre ikinci soruyu seçin
+    if cevap.lower() == 'gggg':
+        ikinci_soru = "gggg / dddd"
+    elif cevap.lower() == 'dddd':
+        ikinci_soru = "cccc / eeee"
+    else:
+        ikinci_soru = "Which one do you choose? (anonim & certain)."
 
-        # 3. soruyu sormak için
-        ucuncu_soru = Colorate.Vertical(Colors.yellow_to_red, "Should I use VPN? (Y/n)")
-        ucuncu_cevap = colored_input(ucuncu_soru + ": ")
-        cevaplar.append((ucuncu_soru, ucuncu_cevap))  # Soru ve cevapları listeye ekleyin
+    # İkinci soruyu görüntüleyin ve cevap alın
+    ikinci_cevap = colored_input(ikinci_soru + ": ")
+    cevaplar.append((ikinci_soru, ikinci_cevap))  # Soru ve cevapları listeye ekleyin
 
-        # Cevap alındığında "Yükleniyor..." yazısını görüntüleyin ve 5 saniye bekleyin
-        print(Colorate.Vertical(Colors.yellow_to_red, "Messages are deleted..."))
-        time.sleep(5)
+    # 3. soruyu sormak için
+    ucuncu_soru = Colorate.Vertical(Colors.yellow_to_red, "Should I use VPN? (Y/n)")
+    ucuncu_cevap = colored_input(ucuncu_soru + ": ")
+    cevaplar.append((ucuncu_soru, ucuncu_cevap))  # Soru ve cevapları listeye ekleyin
 
-        # Rastgele bir tarih oluşturun ve 100 satır metin oluşturun
-        for _ in range(10):
-            yil = random.randint(2015, 2024)
-            ay = random.randint(1, 12)
-            gun = random.randint(1, 28)  # Basit bir hata yönetimi için 28'i kullanabilirsiniz.
+    # Cevap alındığında "Yükleniyor..." yazısını görüntüleyin ve 5 saniye bekleyin
+    print(Colorate.Vertical(Colors.yellow_to_red, "Messages are deleted..."))
+    time.sleep(5)
 
-            tarih = datetime.date(yil, ay, gun)
-            metin = f"Your emails dated {tarih.strftime('%d-%m-%Y')} are being deleted."
-            print(Colorate.Vertical(Colors.yellow_to_red, metin))
+    # Rastgele bir tarih oluşturun ve 100 satır metin oluşturun
+    for _ in range(10):
+        yil = random.randint(2015, 2024)
+        ay = random.randint(1, 12)
+        gun = random.randint(1, 28)  # Basit bir hata yönetimi için 28'i kullanabilirsiniz.
 
-            # Her metin satırı yazdırıldıktan sonra 0.5 saniye bekleyin
-            time.sleep(0.5)
+        tarih = datetime.date(yil, ay, gun)
+        metin = f"Your emails dated {tarih.strftime('%d-%m-%Y')} are being deleted."
+        print(Colorate.Vertical(Colors.yellow_to_red, metin))
 
-        # İşlem tamamlandığında soruları ve cevapları görüntüleyin
-        print(Colorate.Vertical(Colors.yellow_to_red, "Emails have been deleted.."))
-        for soru, cevap in cevaplar:
-            print(Colorate.Vertical(Colors.yellow_to_red, f"Your picks: {cevap}"))
+        # Her metin satırı yazdırıldıktan sonra 0.5 saniye bekleyin
+        time.sleep(0.5)
 
-        # Kullanıcıyı bekletin
-        input(Colorate.Vertical(Colors.yellow_to_red, "press the button to continue..."))
+    # İşlem tamamlandığında soruları ve cevapları görüntüleyin
+    print(Colorate.Vertical(Colors.yellow_to_red, "Emails have been deleted.."))
+    for soru, cevap in cevaplar:
+        print(Colorate.Vertical(Colors.yellow_to_red, f"Your picks: {cevap}"))
+
+    # Kullanıcıyı bekletin
+    input(Colorate.Vertical(Colors.yellow_to_red, "press the button to continue..."))
 
 
     elif choice == '4':
