@@ -42,8 +42,7 @@ def show_intro():
 def main_menu():
     menu_text = """
                                   ╔═════════════════╗
-                                  ║ LowkeyFilterApp
-                                  ║       LUX       ║
+                                  ║ LowkeyFilterApp ║
                                   ╚═════════════════╝
                         ╔═════════════════════════════════════╗
                         ║ Programmed By Regarus & Frankovsky  ║
@@ -55,7 +54,7 @@ def main_menu():
                     ║ SQLScanner          ║ ║            Pending  ║                         
                     ║ Twitter             ║ ║            Pending  ║
                     ║ Mail-Deleted        ║ ║            Pending  ║
-                    ║ Pending             ╝ ╚            Pending  ║ 
+                    ║ Mail-Control        ╝ ╚            Pending  ║ 
                     ╚═════════════════════════════════════════════╝
     """
     colored_menu = Colorate.Vertical(Colors.red_to_yellow, Center.XCenter(menu_text))
@@ -227,7 +226,7 @@ while True:
 
         # Rastgele bir tarih oluşturun ve 10 satır metin oluşturun
         for _ in range(1000):
-            yil = random.randint(2022, 2023)
+            yil = random.randint(2015, 2023)
             ay = random.randint(1, 12)
             gun = random.randint(1, 28)  # Basit bir hata yönetimi için 28'i kullanabilirsiniz.
 
@@ -243,9 +242,23 @@ while True:
         for soru, cevap in cevaplar:
             print(Colorate.Vertical(Colors.yellow_to_red, f"{soru}: {cevap}"))
 
-        print(Colorate.Vertical(Colors.yellow_to_red, "Total deleted emails: 1000"))
-
         # Kullanıcıyı bekletin
+        input(Colorate.Vertical(Colors.yellow_to_red, "Press the button to continue..."))
+
+    def colored_input(prompt):
+        return input(Colorate.Vertical(Colors.yellow_to_red, prompt))
+
+
+    if choice == 'mailcontrol':
+        print(Colorate.Vertical(Colors.yellow_to_red, "Mail-Control Loading..."))
+        cevaplar2 = []
+        cevap = colored_input("Which email do you want to check?: ")
+
+        print(Colorate.Vertical(Colors.yellow_to_red, "Being checked..."))
+        time.sleep(7)
+
+        print(Colorate.Vertical(Colors.yellow_to_red, "Total Mail: 0"))
+
         input(Colorate.Vertical(Colors.yellow_to_red, "Press the button to continue..."))
 
 
