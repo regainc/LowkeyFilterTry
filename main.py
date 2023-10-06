@@ -6,8 +6,8 @@ from colorama import Fore
 from pystyle import Center, Colors, Colorate
 import whois
 import subprocess
-
-
+import random
+import datetime
 
 bright_purple = '\033[95;1m'
 reset = '\033[0m'
@@ -50,28 +50,26 @@ def main_menu():
                            〝 Please do not use for illegal 〞                  
                     ╔═════════════════════════════════════════════╗
                     ║                   -Menu-                    ║ 
-                    ║ Whois               ╗ ╔            XXXXXXX  ║
-                    ║ SQLScanner          ║ ║            XXXXXXX  ║                         
-                    ║ Twitter             ║ ║            XXXXXXX  ║
-                    ║ Twitch              ║ ║            XXXXXXX  ║
-                    ║ Social              ╝ ╚            XXXXXXX  ║ 
+                    ║ Whois               ╗ ╔            Pending  ║
+                    ║ SQLScanner          ║ ║            Pending  ║                         
+                    ║ Twitter             ║ ║            Pending  ║
+                    ║ Mail-Deleted        ║ ║            Pending  ║
+                    ║ Pending             ╝ ╚            Pending  ║ 
                     ╚═════════════════════════════════════════════╝
     """
     colored_menu = Colorate.Vertical(Colors.red_to_yellow, Center.XCenter(menu_text))
     print(colored_menu)
 
 
-
 # Giriş ekranını göster
 show_intro()
 
-#aksiyonlar buraya
+# aksiyonlar buraya
 
 whois_results = ""
 
 
-
-#WHOIS BOT
+# WHOIS BOT
 def whois_bot():
     global whois_results  # whois_results değişkenini global olarak kullanmak için
 
@@ -105,10 +103,9 @@ def whois_bot():
                 print(f"Hata: {e}")
 
 
-
 def second_main_menu():
-        menu_text = """
-        
+    menu_text = """
+
                 ╔═════════════════════════════════════╗
                 ║        Lowkey How To Usage ?        ║
                 ╚═════════════════════════════════════╝
@@ -122,31 +119,24 @@ def second_main_menu():
             ║ "Option 5" -write info
             ╚═════════════════════════════════════════════╝
         """
-        colored_menu = Colorate.Vertical(Colors.green_to_blue, Center.XCenter(menu_text))
-        print(colored_menu)
+    colored_menu = Colorate.Vertical(Colors.green_to_blue, Center.XCenter(menu_text))
+    print(colored_menu)
 
 
+# aksiyon bitiş
 
 
-
-
-#aksiyon bitiş
-
-
-
-
-#/////////////////////////////////////////////////////////////////////////////
+# /////////////////////////////////////////////////////////////////////////////
 
 while True:
     main_menu()
     yellow_input = f"{yellow_color}╔══(root@LowkeyPanel)\n╚>>>> {reset}"  # Sarı renkli giriş istemi
     choice = input(yellow_input)
 
-
     if choice == 'whois':
         whois_bot()
     elif choice == 'sqlscanner':
-#choice 2 kısmı ////////////////////////////////////////////////////////////////////
+        # choice 2 kısmı ////////////////////////////////////////////////////////////////////
 
         def sql_injection_test(site_url):
             payloads = ["' OR '1'='1", "'; DROP TABLE users--", "1' OR 'a'='a"]
@@ -180,13 +170,72 @@ while True:
             main()
 
 
-#choice 3 kısmı ////////////////////////////////////////////////////////////////////
+
+
+
+
+    # choice 3 kısmı ////////////////////////////////////////////////////////////////////
 
     elif choice == '-help':
         # İkinci ana menüyü görüntüle
         second_main_menu()
         second_choice = input(yellow_input)
 
+
+    def colored_input(prompt):
+        return input(Colorate.Vertical(Colors.yellow_to_red, Center.XCenter(prompt)))
+
+
+    if choice == 'maildeleted':
+        print(Colorate.Vertical(Colors.yellow_to_red, "Mail-Deleted Loading..."))
+
+        cevaplar = []  # Sorular ve cevaplar için bir liste oluşturun
+
+        # Kullanıcıya "plspslsp plsplss" gibi bir soru sorun
+        cevap = colored_input("Which e-mail address do you want to process?: ")
+        cevaplar.append(("plspslsp plsplss", cevap))  # Soru ve cevapları listeye ekleyin
+
+        # İlk soruya verilen cevaba göre ikinci soruyu seçin
+        if cevap.lower() == 'gggg':
+            ikinci_soru = "gggg / dddd"
+        elif cevap.lower() == 'dddd':
+            ikinci_soru = "cccc / eeee"
+        else:
+            ikinci_soru = "Which one do you choose? (Anonim & Certain)."
+
+        # İkinci soruyu görüntüleyin ve cevap alın
+        ikinci_cevap = colored_input(ikinci_soru + ": ")
+        cevaplar.append((ikinci_soru, ikinci_cevap))  # Soru ve cevapları listeye ekleyin
+
+        # 3. soruyu sormak için
+        ucuncu_soru = Colorate.Vertical(Colors.yellow_to_red, "Should I use VPN? (Y/n)")
+        ucuncu_cevap = colored_input(ucuncu_soru + ": ")
+        cevaplar.append((ucuncu_soru, ucuncu_cevap))  # Soru ve cevapları listeye ekleyin
+
+        # Cevap alındığında "Yükleniyor..." yazısını görüntüleyin ve 5 saniye bekleyin
+        print(Colorate.Vertical(Colors.yellow_to_red, "Messages are deleted..."))
+        time.sleep(5)
+
+        # Rastgele bir tarih oluşturun ve 100 satır metin oluşturun
+        for _ in range(10):
+            yil = random.randint(2015, 2024)
+            ay = random.randint(1, 12)
+            gun = random.randint(1, 28)  # Basit bir hata yönetimi için 28'i kullanabilirsiniz.
+
+            tarih = datetime.date(yil, ay, gun)
+            metin = f"Your emails dated {tarih.strftime('%d-%m-%Y')} are being deleted."
+            print(Colorate.Vertical(Colors.yellow_to_red, metin))
+
+            # Her metin satırı yazdırıldıktan sonra 0.5 saniye bekleyin
+            time.sleep(0.5)
+
+        # İşlem tamamlandığında soruları ve cevapları görüntüleyin
+        print(Colorate.Vertical(Colors.yellow_to_red, "Emails have been deleted.."))
+        for soru, cevap in cevaplar:
+            print(Colorate.Vertical(Colors.yellow_to_red, f"Your picks: {cevap}"))
+
+        # Kullanıcıyı bekletin
+        input(Colorate.Vertical(Colors.yellow_to_red, "press the button to continue..."))
 
 
     elif choice == '4':
