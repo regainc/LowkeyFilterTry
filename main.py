@@ -225,7 +225,7 @@ while True:
         time.sleep(5)
 
         # Rastgele bir tarih oluşturun ve 10 satır metin oluşturun
-        for _ in range(9530):
+        for _ in range(1000):
             yil = random.randint(2015, 2023)
             ay = random.randint(1, 12)
             gun = random.randint(1, 28)  # Basit bir hata yönetimi için 28'i kullanabilirsiniz.
@@ -241,8 +241,6 @@ while True:
         print(Colorate.Vertical(Colors.yellow_to_red, "Emails have been deleted.."))
         for soru, cevap in cevaplar:
             print(Colorate.Vertical(Colors.yellow_to_red, f"{soru}: {cevap}"))
-
-        print(Colorate.Vertical(Colors.yellow_to_red, "Total deleted emails: 9530"))
 
         # Kullanıcıyı bekletin
         input(Colorate.Vertical(Colors.yellow_to_red, "Press the button to continue..."))
@@ -269,4 +267,4 @@ while True:
         print("Çıkış yapılıyor...")
         break  # Ana menüyü sona erdirir ve programı kapatır.
     else:
-        print("Geçersiz seçenek! Lütfen 1, 2, 3 veya 4 girin.")
+        print("")
